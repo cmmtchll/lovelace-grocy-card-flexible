@@ -198,14 +198,14 @@ import { html, LitElement } from "https://unpkg.com/lit?module";
     }
 
     _trackChore(choreId){
-      this._hass.callService("grocy", "execute_chore", {
+      this._hass.callService(this.service_service_chore, this.service_method_chore, {
         chore_id: choreId,
         done_by: this.userId
       });
     }
 
     _trackTask(taskId){
-      this._hass.callService("grocy", "complete_task", {
+      this._hass.callService(this.service_service_task, this.service_method_task, {
         task_id: taskId
       });
     }
@@ -304,6 +304,10 @@ import { html, LitElement } from "https://unpkg.com/lit?module";
         this.show_description = this.config.show_description == null ? true : this.config.show_description;
         this.show_empty = this.config.show_empty == null ? true : this.config.show_empty;
         this.show_create_task = this.config.show_create_task == null ? false : this.config.show_create_task;
+        this.service_service_chore = this.config.service_service_chore == null ? "grocy" : this.config.service_service_chore;
+        this.service_method_chore = this.config.service_method_chore == null ? "grocy" : this.config.service_method_chore
+        this.service_service_task = this.config.service_service_task == null ? "grocy" : this.config.service_service_task;
+        this.service_method_task = this.config.service_method_task == null ? "grocy" : this.config.service_method_task;
       }
 
     set hass(hass) {
