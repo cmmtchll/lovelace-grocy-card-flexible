@@ -470,10 +470,10 @@ import { html, LitElement } from "https://unpkg.com/lit?module";
   // Configure the preview in the Lovelace card picker
   window.customCards = window.customCards || [];
   window.customCards.push({
-    type: 'grocy-chores-card',
-    name: 'Grocy Chores and Tasks Card',
+    type: 'grocy-card-flexible',
+    name: 'Grocy Chores and Tasks Card Flexible',
     preview: false,
-    description: 'A card used to display chores and/or tasks from the Grocy custom component.',
+    description: 'A card used to display chores and/or tasks from the Grocy custom component with flexible improvements.',
   });
   
-  customElements.define('grocy-chores-card', GrocyChoresCard);
+  customElements.define('grocy-card-flexible', GrocyChoresCard);
